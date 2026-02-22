@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sonu Medical Store</title>
+
+<style>
+body {margin:0;font-family:Arial;background:#f4f9ff;}
+header {background:linear-gradient(90deg,#0a74da,#00c6ff);color:white;padding:20px;text-align:center;}
+nav {background:#004a99;padding:10px;text-align:center;}
+nav a {color:white;margin:0 15px;text-decoration:none;font-weight:bold;}
+section {padding:40px 20px;text-align:center;}
+.cards {display:flex;flex-wrap:wrap;justify-content:center;gap:20px;}
+.card {background:white;padding:20px;width:250px;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,0.1);}
+.btn {background:#0a74da;color:white;padding:10px 20px;border:none;border-radius:5px;cursor:pointer;}
+input, textarea {width:80%;padding:10px;margin:10px 0;}
+footer {background:#111;color:white;padding:15px;text-align:center;}
+iframe {width:100%;height:300px;border:0;border-radius:10px;}
+
+@media (max-width:768px){
+.cards{flex-direction:column;align-items:center;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Sonu Medical Store</h1>
+<p>24x7 Genuine Medicines | Fast Home Delivery</p>
+</header>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#medicines">Medicines</a>
+<a href="#order">Order</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<section id="home">
+<h2>Welcome to Sonu Medical Store</h2>
+<p>All types of medicines available at best price.</p>
+<a href="https://wa.me/919166199953" class="btn">Order on WhatsApp</a>
+</section>
+
+<section id="medicines">
+<h2>Popular Medicines</h2>
+<div class="cards">
+<div class="card"><h3>Fever</h3><p>Paracetamol, Crocin</p></div>
+<div class="card"><h3>Cold & Cough</h3><p>Syrups & Tablets</p></div>
+<div class="card"><h3>Vitamins</h3><p>Health Supplements</p></div>
+</div>
+</section>
+
+<section id="order">
+<h2>Place Your Order</h2>
+<form onsubmit="sendToWhatsApp(); return false;">
+<input type="text" id="name" placeholder="Your Name" required><br>
+<input type="text" id="phone" placeholder="Phone Number" required><br>
+<textarea id="medicine" placeholder="Medicine Name / Prescription Details" required></textarea><br>
+<button class="btn" type="submit">Submit Order</button>
+</form>
+</section>
+
+<section id="contact">
+<h2>Contact Us</h2>
+<p>📍 Sadasar, Churu District</p>
+<p>📞 9166199953</p>
+<p>🕒 Open 24 Hours</p>
+
+<h3>Our Location</h3>
+<iframe src="https://maps.google.com/maps?q=Churu%20Rajasthan&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+</section>
+
+<footer>
+<p>© 2026 Sonu Medical Store | All Rights Reserved</p>
+</footer>
+
+<script>
+function sendToWhatsApp(){
+var name=document.getElementById("name").value;
+var phone=document.getElementById("phone").value;
+var medicine=document.getElementById("medicine").value;
+
+var message="New Order:%0AName: "+name+"%0APhone: "+phone+"%0AMedicine: "+medicine;
+
+window.open("https://wa.me/919166199953?text="+message,"_blank");
+}
+</script>
+
+</body>
+</html>
